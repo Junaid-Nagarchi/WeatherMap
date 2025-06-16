@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Forecast App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    h1 {
+      font-weight: 600;
+      color: #333;
+    }
+    .form-label {
+      font-weight: 500;
+    }
+    .btn-primary {
+      width: 100%;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card text-center">
+          <h1 class="mb-4">🌤️ Weather Forecast</h1>
+          <form action="/weather" method="POST">
+            <div class="form-group text-left">
+              <label for="city" class="form-label">Enter City:</label>
+              <input type="text" class="form-control" id="city" name="city" placeholder="e.g., Mumbai" required />
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Get Weather</button>
+          </form>
+          {% if error %}
+          <div class="alert alert-danger mt-4">{{ error }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

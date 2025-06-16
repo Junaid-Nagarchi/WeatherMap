@@ -1,5 +1,3 @@
-flask-weather-app/Screenshot1.png
-
 # 🌤️ Flask Weather Forecast App
 
 A simple web app to get the weather of any city using Flask.
